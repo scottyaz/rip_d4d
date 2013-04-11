@@ -468,6 +468,9 @@ ul {
   margin-left: 1.2em;
   margin-bottom: 1em;
   position: relative;
+  list-style-type: circle; /* added this ASA */
+;
+
 }
 /* line 336, ../scss/default.scss */
 ul li {
@@ -478,18 +481,20 @@ ul li ul {
   margin-left: 2em;
   margin-bottom: 0;
 }
+
 /* line 343, ../scss/default.scss */
-ul li ul li:before {
+/* ul li ul li:before {
   content: '-';
   font-weight: 600;
-}
+} */
 /* line 350, ../scss/default.scss */
-ul > li:before {
+/* ul > li:before {
   content: '·';
   margin-left: -1em;
   position: absolute;
   font-weight: 600;
-}
+} */
+
 /* line 357, ../scss/default.scss */
 ul ul {
   margin-top: .5em;
