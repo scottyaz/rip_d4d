@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Human Mobility and Cholera Transmission</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Human Mobility and Cholera Transmission">
+  <meta name="author" content="Andrew Azman (with Justin Lessler)">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+    <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+    <!-- END LOGO SLIDE -->
+    
+
+    <!-- TITLE SLIDE -->
+    <!-- Should I move this to a Local Layout File? -->
+    <slide class="title-slide segue nobackground">
+      <hgroup class="auto-fadein">
+        <h1>Human Mobility and Cholera Transmission</h1>
+        <h2>Insights from Mobile Phone Data from the D4D competition</h2>
+        <p>Andrew Azman (with Justin Lessler)<br/>http://scottyaz.github.io/d4d_pres/</p>
+      </hgroup>
+          </slide>
+
+    <!-- SLIDES -->
+      <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    
+  </hgroup>
+  <article>
+    <p><img class="center" src=figures/d4dscreen.png height="600" width="900"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Motivation</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>What role do human mobility and local environmental conditions play in cholera transmission?
+
+<ul>
+<li>North American/European vs. African mobility patterns</li>
+<li>Person-to-person vs. environmentally mediated transmission</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Human Mobility Models</h2>
+  </hgroup>
+  <article>
+    <p><img class="center" src=figures/zipf_and_newton.jpg height="315" width="500"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Human Mobility Models</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Humans (may) follow simple reproducible patterns in their movements</li>
+<li>Key predictors:
+
+<ul>
+<li>Population / population density</li>
+<li>Distance between locations</li>
+</ul></li>
+<li>Gravity Models \(\left(pr( i \rightarrow j) \propto \frac{P_i^{\alpha}P_j^{\beta}}{f(d_{ij})}\right)\)</li>
+<li>Radiation Models (non-parametric)</li>
+<li>Useful for understanding disease dynamics especially in the context of individual-based models</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>D4D Data Set</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>500,000 individuals observed over different two week periods</li>
+<li>55,319,911 calls made from ~1200 towers</li>
+</ul>
+
+
+<div style='float:left;width:48%;' class='centered'>
+  <pre><code>##      id      call.date.time call.tower
+## 89    1 2011-12-14 12:28:00        264
+## 97    1 2011-12-15 13:09:00        264
+## 7557 71 2011-12-12 09:51:00        697
+## 8919 87 2011-12-13 16:43:00        963
+## 8601 85 2011-12-13 07:57:00        780
+## 1531 20 2011-12-07 11:28:00       1020
+</code></pre>
+
+</div>
+<div style='float:right;width:48%;'>
+  
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    
+  </hgroup>
+  <article>
+    <p><img class="center" src=figures/towers_tesselation.png height="550" width="600"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    
+  </hgroup>
+  <article>
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p></p>
+
+<p></p>
+
+<p></p>
+
+<p><img class="center" src=figures/calls_per_person.png height="500" width="500"></p>
+
+
+</div>
+<div style='float:right;width:48%;'>
+  <p></p>
+
+<p></p>
+
+<p></p>
+
+<p><img class="center" src=figures/time_between_calls50.png height="500" width="500"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    
+  </hgroup>
+  <article>
+    
+<div style='float:left;width:48%;' class='centered'>
+  <p></p>
+
+<p></p>
+
+<p></p>
+
+<p><img class="center" src=figures/disp_hist_no_zeros_freq.png height="500" width="500"></p>
+
+
+</div>
+<div style='float:right;width:48%;'>
+  <p></p>
+
+<p></p>
+
+<p></p>
+
+<p><img class="center" src=figures/home_disp_ecdf.png height="500" width="500"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Our (simple) Mobility Model</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Person \(k\) (given their home location \(i\)) will be seen in any other location at any point in time with probability \(\nu_{i,j}\)
+\[ 
+\begin{align}
+logit(\nu_{i,j}) = 
+\left\{
+\begin{array}{ll}
+ \alpha_0 + \alpha_1
+log(P_i)  & \mbox{if } i  = j \\
+     \alpha_2 + \alpha_3
+log(P_i) + \alpha_4 log(P_j) + \alpha_5 log(d_{ij}) & \mbox{if } i \neq j
+\end{array}
+\right.
+\end{align}
+\]</li>
+<li>Challenges:
+
+<ul>
+<li>Depends on home location</li>
+<li>Assumes trips always made from home to different locations</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Model Fit</h2>
+  </hgroup>
+  <article>
+    <table><thead>
+<tr>
+<th>quantile</th>
+<th>\(\alpha_0\)</th>
+<th>\(\alpha_1\)</th>
+<th>\(\alpha_2\)</th>
+<th>\(\alpha_3\)</th>
+<th>\(\alpha_4\)</th>
+<th>\(\alpha_5\)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>2.5%</td>
+<td>1.8704</td>
+<td>-0.1603</td>
+<td>-6.9926</td>
+<td>0.0229</td>
+<td>0.2897</td>
+<td>-1.1270</td>
+</tr>
+<tr>
+<td>50%</td>
+<td>1.8791</td>
+<td>-0.1594</td>
+<td>-6.9815</td>
+<td>0.0239</td>
+<td>0.2905</td>
+<td>-1.1266</td>
+</tr>
+<tr>
+<td>97.5%</td>
+<td>1.8876</td>
+<td>-0.1584</td>
+<td>-6.9707</td>
+<td>0.0249</td>
+<td>0.2913</td>
+<td>-1.1262</td>
+</tr>
+</tbody></table>
+
+<p><img class="center" src=figures/prob_at_home_simple_model_fit.png height="400" width="400"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>Cholera Transmission Model</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Discrete-time Susceptible Infectious Recovered (SIR) model</li>
+<li>Country divided into 5-km grid cells</li>
+<li>All infections mediated through environment
+
+<ul>
+<li>Cholera infected individuals shed vibrios into &quot;environment&quot;</li>
+<li>People drink water with some concentration of vibrios from the environment</li>
+<li>With some probability (dose-response) people get sick</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Environmental Mediators of Transmission</h2>
+  </hgroup>
+  <article>
+    <p><img class="center" src=figures/four_env_plot.png height="500" width="500"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Cholera Simulations</h2>
+  </hgroup>
+  <article>
+    <p><img class="center" src=figures/run5_3.png height="500" width="600"></p>
+
+<h4><a href="http://andrewazman.com/D4D/movies/run3">example simulation</a></h4>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>Cholera Simulations</h2>
+  </hgroup>
+  <article>
+    <p><img class="center" src=figures/arrival_time_run2.png height="500" width="400"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>Future Directions</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Improve movement model
+
+<ul>
+<li>How to learn about duration</li>
+<li>Simulations to understand potential biases</li>
+</ul></li>
+<li>Refine functional form of environmental modifiers </li>
+<li>Fit to cholera data </li>
+<li>Exploration of general epidemiologic connectivity of areas within country</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Links</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li><a href="http://perso.uclouvain.be/vincent.blondel/netmob/2013/">netmob</a></li>
+<li><a href="http://www.kaggle.com/">kaggle</a></li>
+<li><a href="http://www.d4d.orange.com">d4d</a></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+
+  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+<!-- Grab CDN jQuery, fall back to local if offline -->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery-1.7.min.js"><\/script>')</script>
+<!-- Load Javascripts for Widgets -->
+<!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->
+<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+</html>
